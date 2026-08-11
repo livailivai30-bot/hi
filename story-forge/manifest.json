@@ -1,0 +1,13 @@
+{
+  "name": "Story Forge",
+  "short_name": "Story Forge",
+  "description": "مساحة كتابة وإدارة واستمرارية للقصص.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "ar",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12"
+}
