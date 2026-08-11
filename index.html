@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maze of Mind</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="world" aria-label="Maze of Mind game world"></canvas>
+
+    <section id="hud" class="hud">
+      <div class="brand"><span>MAZE OF MIND</span><small>THE WORLD WITHIN</small></div>
+      <div class="stats">
+        <div><span>Mind</span><b id="mind">50</b></div>
+        <div><span>Doors</span><b id="doors">0 / 8</b></div>
+      </div>
+    </section>
+
+    <div id="hint" class="hint">WASD / Arrow Keys to move</div>
+    <div id="interaction" class="interaction hidden">Press <b>E</b> to approach the door</div>
+
+    <section id="question-modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-kicker" id="door-name">THE FIRST DOOR</div>
+        <h1 id="question"></h1>
+        <div id="answers" class="answers"></div>
+        <p class="warning">There is no correct answer. Your choice changes the path.</p>
+      </div>
+    </section>
+
+    <section id="ending" class="modal hidden">
+      <div class="modal-card ending-card">
+        <div class="modal-kicker">THE MAZE REMEMBERS</div>
+        <h1 id="ending-title"></h1>
+        <p id="ending-text"></p>
+        <div class="ending-stats" id="ending-stats"></div>
+        <button id="restart">Enter the maze again</button>
+      </div>
+    </section>
+  </main>
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
