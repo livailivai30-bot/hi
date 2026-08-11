@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maze of Mind — 3D Prototype</title>
+<link rel="stylesheet" href="prototype3d.css">
+</head>
+<body>
+<div id="hud"><div class="brand">MAZE OF MIND</div><div id="hint">WASD / Arrow Keys — Move · Mouse — Look · E — Interact</div><div id="objective">Find the first door.</div></div>
+<div id="crosshair">+</div>
+<div id="dialog" class="hidden"><div class="panel"><div id="dialogTag">THE FIRST GATE</div><h1 id="dialogTitle">A question waits.</h1><p id="dialogText"></p><div id="choices"></div></div></div>
+<div id="fade"></div>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.178.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.178.0/examples/jsm/"}}</script>
+<script type="module" src="prototype3d.js"></script>
+</body></html>
