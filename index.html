@@ -5,6 +5,7 @@
 <title>Maze of Mind — The World Within</title><link rel="stylesheet" href="style.css">
 </head>
 <body><main id="game-shell"><canvas id="world"></canvas>
+<div id="world-state" class="world-state"><span id="chapter">CHAPTER I · THE THRESHOLD</span><b id="world-message">The maze is asleep.</b></div>
 <section class="hud"><div class="brand"><span>MAZE OF MIND</span><small>THE WORLD WITHIN</small></div><div class="stats"><div><span>Mind</span><b id="mind">50</b></div><div><span>Doors</span><b id="doors">0 / 12</b></div></div></section>
 <div id="objective" class="objective">Find the doors. Every answer changes what the maze remembers.</div>
 <div id="hint" class="hint">WASD / Arrow Keys to move</div><div id="interaction" class="interaction hidden"></div>
@@ -14,4 +15,7 @@
 <section id="dialogue" class="modal hidden"><div class="modal-card dialogue-card"><div class="modal-kicker">THE OLD MAN</div><p id="dialogue-text"></p><button id="dialogue-next">Continue</button></div></section>
 <section id="question-modal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-card"><div class="modal-kicker" id="door-name"></div><h1 id="question"></h1><div id="answers" class="answers"></div><p class="warning">There is no correct answer. The maze is measuring the shape of your mind.</p></div></section>
 <section id="ending" class="modal hidden"><div class="modal-card ending-card"><div class="modal-kicker">THE MAZE REMEMBERS</div><h1 id="ending-title"></h1><p id="ending-text"></p><div class="ending-stats" id="ending-stats"></div><p id="ending-detail" class="ending-detail"></p><button id="restart">Enter the maze again</button></div></section>
-</main><script src="data.js"></script><script src="game.js"></script></body></html>
+</main><script src="data.js"></script><script src="game.js"></script>
+<script>
+(()=>{const d=document,doors=d.getElementById('doors'),chapter=d.getElementById('chapter'),msg=d.getElementById('world-message'),root=d.documentElement;let last=-1;const stages=[['CHAPTER I · THE THRESHOLD','The maze is asleep. You are still an unknown variable.'],['CHAPTER II · THE FIRST CRACK','It has noticed your pattern. Some doors feel less empty.'],['CHAPTER III · THE MIRROR','The world is beginning to answer you instead of asking.'],['CHAPTER IV · THE WITNESS','Your choices have consequences beyond the questions.'],['CHAPTER V · THE LAST QUESTION','The maze no longer needs to test you. It wants to know why you came.']];function tick(){const n=parseInt((doors.textContent.match(/\d+/)||[0])[0]);const i=n===12?4:Math.min(4,Math.floor(n/3));if(i!==last){last=i;chapter.textContent=stages[i][0];msg.textContent=stages[i][1];root.style.setProperty('--awakening',String(i));document.body.dataset.chapter=i}}tick();new MutationObserver(tick).observe(doors,{childList:true,characterData:true,subtree:true});setInterval(tick,800);})();
+</script></body></html>
